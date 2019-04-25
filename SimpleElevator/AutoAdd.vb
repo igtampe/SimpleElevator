@@ -53,18 +53,21 @@
                 CurrentY = MinY
                 FloorCount = 0
                 Do
+
+
+                    MainWindow.AddFloorToElevator("[" & CurrentFloor & "] ", "", color, "~", CurrentY, "~")
+
+
                     If CurrentY = MaxY Then Exit Do
                     If CurrentY > MaxY Then
                         MsgBox("This isn't adding up: " & vbNewLine & vbNewLine & "CurrentY: " & CurrentY & vbNewLine & "MaxY: " & MaxY & vbNewLine & "Current Floor: " & CurrentFloor & vbNewLine & vbNewLine & "Check your step or your values and try again", MsgBoxStyle.Critical, "oh no")
                         Exit Sub
                     End If
 
-                    MainWindow.AddFloorToElevator("[" & CurrentFloor & "] ", "", color, "~", CurrentY, "~")
 
                     CurrentY = CurrentY + YStep
                     CurrentFloor = CurrentFloor + 1
                     FloorCount = FloorCount + 1
-
 
                 Loop
 
