@@ -214,16 +214,21 @@ Public Class MainWindow
     End Sub
 
     Public Sub PreviewGenerate()
-        PreviewText = CurrentElevator.Name.Replace("\n", vbNewLine)
         Try
-            For X = 0 To CurrentElevator.Floor.Count - 1
-                PreviewText = PreviewText & CurrentElevator.Floor(X).FloorText.Replace("\n", vbNewLine)
-            Next
+            PreviewText = CurrentElevator.Name.Replace("\n", vbNewLine)
+            Try
+                For X = 0 To CurrentElevator.Floor.Count - 1
+                    PreviewText = PreviewText & CurrentElevator.Floor(X).FloorText.Replace("\n", vbNewLine)
+                Next
+            Catch
+            End Try
+            PreviewWindow.TextBox1.Text = PreviewText
         Catch
+            PreviewWindow.TextBox1.Text = "Unable to render preview"
         End Try
 
 
-        PreviewWindow.TextBox1.Text = PreviewText
+
         '
         FileModified = True
     End Sub
