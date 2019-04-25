@@ -31,17 +31,15 @@ Partial Class Summary
         Me.FloorColor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BuildingNameTXB = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.BuildingColorDRPDWN = New System.Windows.Forms.ComboBox()
-        Me.RemoveBTN = New System.Windows.Forms.Button()
-        Me.ModBTN = New System.Windows.Forms.Button()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.AddBTN = New System.Windows.Forms.Button()
-        Me.BoldBox = New System.Windows.Forms.CheckBox()
-        Me.ItalicBox = New System.Windows.Forms.CheckBox()
-        Me.UnderlineBox = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.AddBTN = New System.Windows.Forms.Button()
+        Me.ModBTN = New System.Windows.Forms.Button()
+        Me.RemoveBTN = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BuildingColorDRPDWN = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ClearBTN = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -87,6 +85,7 @@ Partial Class Summary
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ClearBTN)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.AddBTN)
         Me.GroupBox1.Controls.Add(Me.ModBTN)
@@ -99,57 +98,14 @@ Partial Class Summary
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Floors"
         '
-        'GroupBox2
+        'Button1
         '
-        Me.GroupBox2.Controls.Add(Me.UnderlineBox)
-        Me.GroupBox2.Controls.Add(Me.ItalicBox)
-        Me.GroupBox2.Controls.Add(Me.BoldBox)
-        Me.GroupBox2.Controls.Add(Me.BuildingColorDRPDWN)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.BuildingNameTXB)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(392, 97)
-        Me.GroupBox2.TabIndex = 3
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Header Information"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(224, 66)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(34, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Color:"
-        '
-        'BuildingColorDRPDWN
-        '
-        Me.BuildingColorDRPDWN.FormattingEnabled = True
-        Me.BuildingColorDRPDWN.Location = New System.Drawing.Point(264, 63)
-        Me.BuildingColorDRPDWN.Name = "BuildingColorDRPDWN"
-        Me.BuildingColorDRPDWN.Size = New System.Drawing.Size(121, 21)
-        Me.BuildingColorDRPDWN.TabIndex = 3
-        '
-        'RemoveBTN
-        '
-        Me.RemoveBTN.Location = New System.Drawing.Point(362, 308)
-        Me.RemoveBTN.Name = "RemoveBTN"
-        Me.RemoveBTN.Size = New System.Drawing.Size(23, 23)
-        Me.RemoveBTN.TabIndex = 1
-        Me.RemoveBTN.Text = "-"
-        Me.ToolTip1.SetToolTip(Me.RemoveBTN, "Delete a Floor")
-        Me.RemoveBTN.UseVisualStyleBackColor = True
-        '
-        'ModBTN
-        '
-        Me.ModBTN.Location = New System.Drawing.Point(333, 308)
-        Me.ModBTN.Name = "ModBTN"
-        Me.ModBTN.Size = New System.Drawing.Size(23, 23)
-        Me.ModBTN.TabIndex = 2
-        Me.ModBTN.Text = "#"
-        Me.ToolTip1.SetToolTip(Me.ModBTN, "Modify a Floor")
-        Me.ModBTN.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(7, 308)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Auto Add"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'AddBTN
         '
@@ -161,44 +117,64 @@ Partial Class Summary
         Me.ToolTip1.SetToolTip(Me.AddBTN, "Add a Floor")
         Me.AddBTN.UseVisualStyleBackColor = True
         '
-        'BoldBox
+        'ModBTN
         '
-        Me.BoldBox.AutoSize = True
-        Me.BoldBox.Location = New System.Drawing.Point(7, 65)
-        Me.BoldBox.Name = "BoldBox"
-        Me.BoldBox.Size = New System.Drawing.Size(47, 17)
-        Me.BoldBox.TabIndex = 4
-        Me.BoldBox.Text = "Bold"
-        Me.BoldBox.UseVisualStyleBackColor = True
+        Me.ModBTN.Location = New System.Drawing.Point(333, 308)
+        Me.ModBTN.Name = "ModBTN"
+        Me.ModBTN.Size = New System.Drawing.Size(23, 23)
+        Me.ModBTN.TabIndex = 2
+        Me.ModBTN.Text = "#"
+        Me.ToolTip1.SetToolTip(Me.ModBTN, "Modify a Floor")
+        Me.ModBTN.UseVisualStyleBackColor = True
         '
-        'ItalicBox
+        'RemoveBTN
         '
-        Me.ItalicBox.AutoSize = True
-        Me.ItalicBox.Location = New System.Drawing.Point(60, 65)
-        Me.ItalicBox.Name = "ItalicBox"
-        Me.ItalicBox.Size = New System.Drawing.Size(48, 17)
-        Me.ItalicBox.TabIndex = 4
-        Me.ItalicBox.Text = "Italic"
-        Me.ItalicBox.UseVisualStyleBackColor = True
+        Me.RemoveBTN.Location = New System.Drawing.Point(362, 308)
+        Me.RemoveBTN.Name = "RemoveBTN"
+        Me.RemoveBTN.Size = New System.Drawing.Size(23, 23)
+        Me.RemoveBTN.TabIndex = 1
+        Me.RemoveBTN.Text = "-"
+        Me.ToolTip1.SetToolTip(Me.RemoveBTN, "Delete a Floor")
+        Me.RemoveBTN.UseVisualStyleBackColor = True
         '
-        'UnderlineBox
+        'GroupBox2
         '
-        Me.UnderlineBox.AutoSize = True
-        Me.UnderlineBox.Location = New System.Drawing.Point(114, 65)
-        Me.UnderlineBox.Name = "UnderlineBox"
-        Me.UnderlineBox.Size = New System.Drawing.Size(77, 17)
-        Me.UnderlineBox.TabIndex = 4
-        Me.UnderlineBox.Text = "Underlined"
-        Me.UnderlineBox.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.BuildingColorDRPDWN)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.BuildingNameTXB)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(392, 97)
+        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Header Information"
         '
-        'Button1
+        'BuildingColorDRPDWN
         '
-        Me.Button1.Location = New System.Drawing.Point(7, 308)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Auto Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BuildingColorDRPDWN.FormattingEnabled = True
+        Me.BuildingColorDRPDWN.Location = New System.Drawing.Point(46, 63)
+        Me.BuildingColorDRPDWN.Name = "BuildingColorDRPDWN"
+        Me.BuildingColorDRPDWN.Size = New System.Drawing.Size(121, 21)
+        Me.BuildingColorDRPDWN.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 66)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(34, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Color:"
+        '
+        'ClearBTN
+        '
+        Me.ClearBTN.Location = New System.Drawing.Point(275, 308)
+        Me.ClearBTN.Name = "ClearBTN"
+        Me.ClearBTN.Size = New System.Drawing.Size(23, 23)
+        Me.ClearBTN.TabIndex = 5
+        Me.ClearBTN.Text = "*"
+        Me.ToolTip1.SetToolTip(Me.ClearBTN, "Clear all floors")
+        Me.ClearBTN.UseVisualStyleBackColor = True
         '
         'Summary
         '
@@ -237,8 +213,6 @@ Partial Class Summary
     Friend WithEvents BuildingColorDRPDWN As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents UnderlineBox As CheckBox
-    Friend WithEvents ItalicBox As CheckBox
-    Friend WithEvents BoldBox As CheckBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents ClearBTN As Button
 End Class

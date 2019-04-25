@@ -23,6 +23,21 @@ Partial Class AutoAdd
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.EndYBox = New System.Windows.Forms.NumericUpDown()
+        Me.StartYBox = New System.Windows.Forms.NumericUpDown()
+        Me.StartFloorBox = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ColorComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SecondYTXB = New System.Windows.Forms.NumericUpDown()
+        Me.Label6 = New System.Windows.Forms.Label()
+        CType(Me.EndYBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StartYBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StartFloorBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SecondYTXB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -30,24 +45,140 @@ Partial Class AutoAdd
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Start Y Level"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(15, 61)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(65, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "End Y Level"
+        '
+        'EndYBox
+        '
+        Me.EndYBox.Location = New System.Drawing.Point(86, 59)
+        Me.EndYBox.Name = "EndYBox"
+        Me.EndYBox.Size = New System.Drawing.Size(120, 20)
+        Me.EndYBox.TabIndex = 2
+        '
+        'StartYBox
+        '
+        Me.StartYBox.Location = New System.Drawing.Point(86, 7)
+        Me.StartYBox.Name = "StartYBox"
+        Me.StartYBox.Size = New System.Drawing.Size(120, 20)
+        Me.StartYBox.TabIndex = 4
+        '
+        'StartFloorBox
+        '
+        Me.StartFloorBox.Location = New System.Drawing.Point(86, 85)
+        Me.StartFloorBox.Name = "StartFloorBox"
+        Me.StartFloorBox.Size = New System.Drawing.Size(120, 20)
+        Me.StartFloorBox.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(15, 87)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Start Floor #"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(52, 138)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "OK"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(133, 138)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ColorComboBox
+        '
+        Me.ColorComboBox.FormattingEnabled = True
+        Me.ColorComboBox.Location = New System.Drawing.Point(86, 111)
+        Me.ColorComboBox.Name = "ColorComboBox"
+        Me.ColorComboBox.Size = New System.Drawing.Size(120, 21)
+        Me.ColorComboBox.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(49, 114)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(31, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Color"
+        '
+        'SecondYTXB
+        '
+        Me.SecondYTXB.Location = New System.Drawing.Point(86, 33)
+        Me.SecondYTXB.Name = "SecondYTXB"
+        Me.SecondYTXB.Size = New System.Drawing.Size(120, 20)
+        Me.SecondYTXB.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(16, 33)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(64, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "2nd Y Level"
         '
         'AutoAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(240, 450)
+        Me.ClientSize = New System.Drawing.Size(218, 172)
+        Me.Controls.Add(Me.ColorComboBox)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.StartYBox)
+        Me.Controls.Add(Me.StartFloorBox)
+        Me.Controls.Add(Me.SecondYTXB)
+        Me.Controls.Add(Me.EndYBox)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "AutoAdd"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "AutoAdd"
+        CType(Me.EndYBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StartYBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StartFloorBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SecondYTXB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents EndYBox As NumericUpDown
+    Friend WithEvents StartYBox As NumericUpDown
+    Friend WithEvents StartFloorBox As NumericUpDown
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents ColorComboBox As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents SecondYTXB As NumericUpDown
+    Friend WithEvents Label6 As Label
 End Class

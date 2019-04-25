@@ -30,17 +30,18 @@ Partial Class MainWindow
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FloorMapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PreviewToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,7 +51,7 @@ Partial Class MainWindow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.MdiWindowListItem = Me.WindowsToolStripMenuItem
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(981, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -85,6 +86,12 @@ Partial Class MainWindow
         Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As"
         '
+        'ExportToolStripMenuItem
+        '
+        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
+        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExportToolStripMenuItem.Text = "Export"
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
@@ -93,22 +100,28 @@ Partial Class MainWindow
         '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FloorMapToolStripMenuItem, Me.PreviewToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SummaryToolStripMenuItem, Me.PreviewToolStripMenuItem1, Me.ExportToolStripMenuItem1})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
         Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.ViewToolStripMenuItem.Text = "View"
         '
-        'FloorMapToolStripMenuItem
+        'SummaryToolStripMenuItem
         '
-        Me.FloorMapToolStripMenuItem.Name = "FloorMapToolStripMenuItem"
-        Me.FloorMapToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.FloorMapToolStripMenuItem.Text = "Summary"
+        Me.SummaryToolStripMenuItem.Name = "SummaryToolStripMenuItem"
+        Me.SummaryToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.SummaryToolStripMenuItem.Text = "Summary"
         '
-        'PreviewToolStripMenuItem
+        'PreviewToolStripMenuItem1
         '
-        Me.PreviewToolStripMenuItem.Name = "PreviewToolStripMenuItem"
-        Me.PreviewToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PreviewToolStripMenuItem.Text = "Preview"
+        Me.PreviewToolStripMenuItem1.Name = "PreviewToolStripMenuItem1"
+        Me.PreviewToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
+        Me.PreviewToolStripMenuItem1.Text = "Preview"
+        '
+        'ExportToolStripMenuItem1
+        '
+        Me.ExportToolStripMenuItem1.Name = "ExportToolStripMenuItem1"
+        Me.ExportToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
+        Me.ExportToolStripMenuItem1.Text = "Export"
         '
         'HelpToolStripMenuItem
         '
@@ -120,7 +133,7 @@ Partial Class MainWindow
         'AboutToolStripMenuItem1
         '
         Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
-        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(102, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
         '
         'WindowsToolStripMenuItem
@@ -134,28 +147,31 @@ Partial Class MainWindow
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.DefaultExt = "elev"
+        Me.SaveFileDialog1.Filter = "Elevators|*.elev|All Files|*.*"
+        Me.SaveFileDialog1.Title = "Save As"
+        '
         'OpenFileDialog1
         '
+        Me.OpenFileDialog1.DefaultExt = "elev"
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'ExportToolStripMenuItem
-        '
-        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
-        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ExportToolStripMenuItem.Text = "Export"
+        Me.OpenFileDialog1.Filter = "Elevators|*.elev|All Files|*.*"
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(981, 478)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Cornerstone SimpleElevator 1.0"
+        Me.Text = "SimpleElevator"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -170,14 +186,15 @@ Partial Class MainWindow
     Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FloorMapToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents WindowsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PreviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SummaryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PreviewToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ExportToolStripMenuItem1 As ToolStripMenuItem
 End Class
