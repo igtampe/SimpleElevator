@@ -61,6 +61,7 @@ Partial Class AutoAdd
         'EndYBox
         '
         Me.EndYBox.Location = New System.Drawing.Point(86, 59)
+        Me.EndYBox.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.EndYBox.Name = "EndYBox"
         Me.EndYBox.Size = New System.Drawing.Size(120, 20)
         Me.EndYBox.TabIndex = 2
@@ -68,6 +69,7 @@ Partial Class AutoAdd
         'StartYBox
         '
         Me.StartYBox.Location = New System.Drawing.Point(86, 7)
+        Me.StartYBox.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.StartYBox.Name = "StartYBox"
         Me.StartYBox.Size = New System.Drawing.Size(120, 20)
         Me.StartYBox.TabIndex = 4
@@ -75,6 +77,7 @@ Partial Class AutoAdd
         'StartFloorBox
         '
         Me.StartFloorBox.Location = New System.Drawing.Point(86, 85)
+        Me.StartFloorBox.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.StartFloorBox.Name = "StartFloorBox"
         Me.StartFloorBox.Size = New System.Drawing.Size(120, 20)
         Me.StartFloorBox.TabIndex = 3
@@ -126,6 +129,7 @@ Partial Class AutoAdd
         'SecondYTXB
         '
         Me.SecondYTXB.Location = New System.Drawing.Point(86, 33)
+        Me.SecondYTXB.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.SecondYTXB.Name = "SecondYTXB"
         Me.SecondYTXB.Size = New System.Drawing.Size(120, 20)
         Me.SecondYTXB.TabIndex = 2
