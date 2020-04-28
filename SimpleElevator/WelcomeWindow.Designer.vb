@@ -25,9 +25,9 @@ Partial Class WelcomeWindow
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WelcomeWindow))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.NewElevator = New System.Windows.Forms.Button()
+        Me.OpenElevator = New System.Windows.Forms.Button()
+        Me.QuitTime = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -45,44 +45,44 @@ Partial Class WelcomeWindow
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Welcome to SimpleElevator!"
         '
-        'Button1
+        'NewElevator
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.BackgroundImage = Global.SimpleElevator.My.Resources.Resources.File
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(24, 59)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(120, 120)
-        Me.Button1.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.Button1, "Create a new elevator")
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.NewElevator.BackColor = System.Drawing.Color.White
+        Me.NewElevator.BackgroundImage = Global.SimpleElevator.My.Resources.Resources.File
+        Me.NewElevator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.NewElevator.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.NewElevator.Location = New System.Drawing.Point(24, 59)
+        Me.NewElevator.Name = "NewElevator"
+        Me.NewElevator.Size = New System.Drawing.Size(120, 120)
+        Me.NewElevator.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.NewElevator, "Create a new elevator")
+        Me.NewElevator.UseVisualStyleBackColor = False
         '
-        'Button2
+        'OpenElevator
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.BackgroundImage = Global.SimpleElevator.My.Resources.Resources.OpenedFolder
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(177, 59)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(120, 120)
-        Me.Button2.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.Button2, "Open a previously saved elevator")
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.OpenElevator.BackColor = System.Drawing.Color.White
+        Me.OpenElevator.BackgroundImage = Global.SimpleElevator.My.Resources.Resources.OpenedFolder
+        Me.OpenElevator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.OpenElevator.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.OpenElevator.Location = New System.Drawing.Point(177, 59)
+        Me.OpenElevator.Name = "OpenElevator"
+        Me.OpenElevator.Size = New System.Drawing.Size(120, 120)
+        Me.OpenElevator.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.OpenElevator, "Open a previously saved elevator")
+        Me.OpenElevator.UseVisualStyleBackColor = False
         '
-        'Button3
+        'QuitTime
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
-        Me.Button3.BackgroundImage = Global.SimpleElevator.My.Resources.Resources.door_opened
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button3.Location = New System.Drawing.Point(328, 59)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(120, 120)
-        Me.Button3.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.Button3, "Exit")
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.QuitTime.BackColor = System.Drawing.Color.White
+        Me.QuitTime.BackgroundImage = Global.SimpleElevator.My.Resources.Resources.door_opened
+        Me.QuitTime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.QuitTime.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.QuitTime.Location = New System.Drawing.Point(328, 59)
+        Me.QuitTime.Name = "QuitTime"
+        Me.QuitTime.Size = New System.Drawing.Size(120, 120)
+        Me.QuitTime.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.QuitTime, "Exit")
+        Me.QuitTime.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -123,9 +123,9 @@ Partial Class WelcomeWindow
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.QuitTime)
+        Me.Controls.Add(Me.OpenElevator)
+        Me.Controls.Add(Me.NewElevator)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -139,9 +139,9 @@ Partial Class WelcomeWindow
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents NewElevator As Button
+    Friend WithEvents OpenElevator As Button
+    Friend WithEvents QuitTime As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

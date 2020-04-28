@@ -1,18 +1,29 @@
 ﻿Public Class WelcomeWindow
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Application.Exit()
 
+    '----------------------------------------------------[Variables]----------------------------------------------------
+
+    Public MyResult As DialogResult
+
+    '----------------------------------------------------[Initialization]----------------------------------------------------
+
+    Public Sub New()
+        InitializeComponent()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'new
-        MainWindow.WelcomeResult = DialogResult.No
+    '----------------------------------------------------[Buttons]----------------------------------------------------
+
+    Private Sub Nevermind() Handles QuitTime.Click
+        Splash.Close()
+    End Sub
+
+    Private Sub NewFile() Handles NewElevator.Click
+        MyResult = DialogResult.No
         Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        'OpenDialog
-        MainWindow.welcomeresult = DialogResult.Yes
+    Private Sub OpenFile() Handles OpenElevator.Click
+        MyResult = DialogResult.Yes
         Close()
     End Sub
+
 End Class

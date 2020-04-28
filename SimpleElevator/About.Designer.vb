@@ -23,10 +23,20 @@ Partial Class About
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.OkBTN = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(12, 235)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(399, 47)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "SimpleElevator Version 2.0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(C)2020 Cornerstone LLC, Igtampe, No Rights Reserve" &
+    "d."
         '
         'PictureBox1
         '
@@ -38,21 +48,21 @@ Partial Class About
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'OkBTN
         '
-        Me.Label1.Location = New System.Drawing.Point(12, 235)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(480, 67)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "SimpleElevator Version 1.0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(C)2019 Cornerstone LLC, Igtampe Development Inc. N" &
-    "o Rights Reserved. I won't publish the source but if you decompile it then you c" &
-    "an use it I guess ¯\_(ツ)_/¯"
+        Me.OkBTN.Location = New System.Drawing.Point(417, 257)
+        Me.OkBTN.Name = "OkBTN"
+        Me.OkBTN.Size = New System.Drawing.Size(75, 23)
+        Me.OkBTN.TabIndex = 2
+        Me.OkBTN.Text = "OK"
+        Me.OkBTN.UseVisualStyleBackColor = True
         '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(504, 310)
+        Me.ClientSize = New System.Drawing.Size(504, 292)
+        Me.Controls.Add(Me.OkBTN)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -68,4 +78,5 @@ Partial Class About
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents OkBTN As Button
 End Class

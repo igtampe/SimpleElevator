@@ -31,7 +31,8 @@ Partial Class Summary
         Me.FloorColor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BuildingNameTXB = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ClearBTN = New System.Windows.Forms.Button()
+        Me.AutoAddBTN = New System.Windows.Forms.Button()
         Me.AddBTN = New System.Windows.Forms.Button()
         Me.ModBTN = New System.Windows.Forms.Button()
         Me.RemoveBTN = New System.Windows.Forms.Button()
@@ -39,17 +40,28 @@ Partial Class Summary
         Me.BuildingColorDRPDWN = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ClearBTN = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExportMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListView
         '
         Me.ListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.FloorName, Me.FloorCoordinates, Me.FloorHover, Me.FloorColor})
+        Me.ListView.FullRowSelect = True
+        Me.ListView.HideSelection = False
         Me.ListView.Location = New System.Drawing.Point(7, 19)
         Me.ListView.Name = "ListView"
-        Me.ListView.Size = New System.Drawing.Size(379, 283)
+        Me.ListView.Size = New System.Drawing.Size(379, 279)
         Me.ListView.TabIndex = 0
         Me.ListView.UseCompatibleStateImageBehavior = False
         Me.ListView.View = System.Windows.Forms.View.Details
@@ -81,31 +93,40 @@ Partial Class Summary
         Me.BuildingNameTXB.Name = "BuildingNameTXB"
         Me.BuildingNameTXB.Size = New System.Drawing.Size(379, 38)
         Me.BuildingNameTXB.TabIndex = 1
-        Me.BuildingNameTXB.Text = "Building Name"
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ClearBTN)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.AutoAddBTN)
         Me.GroupBox1.Controls.Add(Me.AddBTN)
         Me.GroupBox1.Controls.Add(Me.ModBTN)
         Me.GroupBox1.Controls.Add(Me.RemoveBTN)
         Me.GroupBox1.Controls.Add(Me.ListView)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 115)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(392, 340)
+        Me.GroupBox1.Size = New System.Drawing.Size(392, 348)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Floors"
         '
-        'Button1
+        'ClearBTN
         '
-        Me.Button1.Location = New System.Drawing.Point(7, 308)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Auto Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ClearBTN.Location = New System.Drawing.Point(275, 308)
+        Me.ClearBTN.Name = "ClearBTN"
+        Me.ClearBTN.Size = New System.Drawing.Size(23, 23)
+        Me.ClearBTN.TabIndex = 5
+        Me.ClearBTN.Text = "*"
+        Me.ToolTip1.SetToolTip(Me.ClearBTN, "Clear all floors")
+        Me.ClearBTN.UseVisualStyleBackColor = True
+        '
+        'AutoAddBTN
+        '
+        Me.AutoAddBTN.Location = New System.Drawing.Point(7, 308)
+        Me.AutoAddBTN.Name = "AutoAddBTN"
+        Me.AutoAddBTN.Size = New System.Drawing.Size(75, 23)
+        Me.AutoAddBTN.TabIndex = 4
+        Me.AutoAddBTN.Text = "Auto Add"
+        Me.AutoAddBTN.UseVisualStyleBackColor = True
         '
         'AddBTN
         '
@@ -144,7 +165,7 @@ Partial Class Summary
         Me.GroupBox2.Controls.Add(Me.BuildingNameTXB)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(392, 97)
+        Me.GroupBox2.Size = New System.Drawing.Size(392, 93)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Header Information"
@@ -166,28 +187,82 @@ Partial Class Summary
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Color:"
         '
-        'ClearBTN
+        'MenuStrip1
         '
-        Me.ClearBTN.Location = New System.Drawing.Point(275, 308)
-        Me.ClearBTN.Name = "ClearBTN"
-        Me.ClearBTN.Size = New System.Drawing.Size(23, 23)
-        Me.ClearBTN.TabIndex = 5
-        Me.ClearBTN.Text = "*"
-        Me.ToolTip1.SetToolTip(Me.ClearBTN, "Clear all floors")
-        Me.ClearBTN.UseVisualStyleBackColor = True
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 439)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(413, 24)
+        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripSeparator, Me.SaveToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.toolStripSeparator1, Me.ExportMenuItem, Me.toolStripSeparator2, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "&File"
+        '
+        'toolStripSeparator
+        '
+        Me.toolStripSeparator.Name = "toolStripSeparator"
+        Me.toolStripSeparator.Size = New System.Drawing.Size(183, 6)
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Image = CType(resources.GetObject("SaveToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.SaveToolStripMenuItem.Text = "&Save"
+        '
+        'SaveAsToolStripMenuItem
+        '
+        Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
+        Me.SaveAsToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.SaveAsToolStripMenuItem.Text = "Save &As"
+        '
+        'toolStripSeparator1
+        '
+        Me.toolStripSeparator1.Name = "toolStripSeparator1"
+        Me.toolStripSeparator1.Size = New System.Drawing.Size(183, 6)
+        '
+        'ExportMenuItem
+        '
+        Me.ExportMenuItem.Name = "ExportMenuItem"
+        Me.ExportMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.ExportMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ExportMenuItem.Text = "&Export"
+        '
+        'toolStripSeparator2
+        '
+        Me.toolStripSeparator2.Name = "toolStripSeparator2"
+        Me.toolStripSeparator2.Size = New System.Drawing.Size(183, 6)
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Summary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(413, 464)
+        Me.ClientSize = New System.Drawing.Size(413, 463)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(50, 50)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(429, 502)
+        Me.MaximumSize = New System.Drawing.Size(429, 522)
         Me.MinimumSize = New System.Drawing.Size(429, 502)
         Me.Name = "Summary"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
@@ -195,7 +270,10 @@ Partial Class Summary
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -213,6 +291,15 @@ Partial Class Summary
     Friend WithEvents BuildingColorDRPDWN As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents Button1 As Button
+    Friend WithEvents AutoAddBTN As Button
     Friend WithEvents ClearBTN As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents toolStripSeparator As ToolStripSeparator
+    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents toolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents toolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExportMenuItem As ToolStripMenuItem
 End Class

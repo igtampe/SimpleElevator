@@ -28,8 +28,8 @@ Partial Class AutoAdd
         Me.StartYBox = New System.Windows.Forms.NumericUpDown()
         Me.StartFloorBox = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.OKBTN = New System.Windows.Forms.Button()
+        Me.CancelBTN = New System.Windows.Forms.Button()
         Me.ColorComboBox = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.SecondYTXB = New System.Windows.Forms.NumericUpDown()
@@ -64,7 +64,7 @@ Partial Class AutoAdd
         Me.EndYBox.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.EndYBox.Name = "EndYBox"
         Me.EndYBox.Size = New System.Drawing.Size(120, 20)
-        Me.EndYBox.TabIndex = 2
+        Me.EndYBox.TabIndex = 3
         '
         'StartYBox
         '
@@ -72,7 +72,7 @@ Partial Class AutoAdd
         Me.StartYBox.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.StartYBox.Name = "StartYBox"
         Me.StartYBox.Size = New System.Drawing.Size(120, 20)
-        Me.StartYBox.TabIndex = 4
+        Me.StartYBox.TabIndex = 1
         '
         'StartFloorBox
         '
@@ -80,7 +80,7 @@ Partial Class AutoAdd
         Me.StartFloorBox.Maximum = New Decimal(New Integer() {255, 0, 0, 0})
         Me.StartFloorBox.Name = "StartFloorBox"
         Me.StartFloorBox.Size = New System.Drawing.Size(120, 20)
-        Me.StartFloorBox.TabIndex = 3
+        Me.StartFloorBox.TabIndex = 4
         '
         'Label4
         '
@@ -91,23 +91,23 @@ Partial Class AutoAdd
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Start Floor #"
         '
-        'Button1
+        'OKBTN
         '
-        Me.Button1.Location = New System.Drawing.Point(52, 138)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "OK"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.OKBTN.Location = New System.Drawing.Point(52, 138)
+        Me.OKBTN.Name = "OKBTN"
+        Me.OKBTN.Size = New System.Drawing.Size(75, 23)
+        Me.OKBTN.TabIndex = 6
+        Me.OKBTN.Text = "OK"
+        Me.OKBTN.UseVisualStyleBackColor = True
         '
-        'Button2
+        'CancelBTN
         '
-        Me.Button2.Location = New System.Drawing.Point(133, 138)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.CancelBTN.Location = New System.Drawing.Point(133, 138)
+        Me.CancelBTN.Name = "CancelBTN"
+        Me.CancelBTN.Size = New System.Drawing.Size(75, 23)
+        Me.CancelBTN.TabIndex = 7
+        Me.CancelBTN.Text = "Cancel"
+        Me.CancelBTN.UseVisualStyleBackColor = True
         '
         'ColorComboBox
         '
@@ -115,7 +115,7 @@ Partial Class AutoAdd
         Me.ColorComboBox.Location = New System.Drawing.Point(86, 111)
         Me.ColorComboBox.Name = "ColorComboBox"
         Me.ColorComboBox.Size = New System.Drawing.Size(120, 21)
-        Me.ColorComboBox.TabIndex = 7
+        Me.ColorComboBox.TabIndex = 5
         '
         'Label5
         '
@@ -149,8 +149,8 @@ Partial Class AutoAdd
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(218, 172)
         Me.Controls.Add(Me.ColorComboBox)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.CancelBTN)
+        Me.Controls.Add(Me.OKBTN)
         Me.Controls.Add(Me.StartYBox)
         Me.Controls.Add(Me.StartFloorBox)
         Me.Controls.Add(Me.SecondYTXB)
@@ -179,8 +179,8 @@ Partial Class AutoAdd
     Friend WithEvents StartYBox As NumericUpDown
     Friend WithEvents StartFloorBox As NumericUpDown
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents OKBTN As Button
+    Friend WithEvents CancelBTN As Button
     Friend WithEvents ColorComboBox As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents SecondYTXB As NumericUpDown

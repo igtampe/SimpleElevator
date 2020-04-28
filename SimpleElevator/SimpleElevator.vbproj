@@ -85,7 +85,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -125,11 +125,19 @@
     <Compile Include="AutoAdd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CBElevator.vb" />
+    <Compile Include="Resources\Floor.vb" />
+    <Compile Include="Resources\MCColor.vb" />
+    <Compile Include="Splash.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Splash.Designer.vb">
+      <DependentUpon>Splash.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ItemDetails.Designer.vb">
@@ -148,21 +156,17 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PreviewWindow.Designer.vb">
-      <DependentUpon>PreviewWindow.vb</DependentUpon>
+    <Compile Include="TextboxWindow.Designer.vb">
+      <DependentUpon>TextboxWindow.vb</DependentUpon>
     </Compile>
-    <Compile Include="PreviewWindow.vb">
+    <Compile Include="TextboxWindow.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Summary.Designer.vb">
@@ -185,8 +189,8 @@
     <EmbeddedResource Include="AutoAdd.resx">
       <DependentUpon>AutoAdd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemDetails.resx">
       <DependentUpon>ItemDetails.vb</DependentUpon>
@@ -196,12 +200,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="PreviewWindow.resx">
-      <DependentUpon>PreviewWindow.vb</DependentUpon>
+    <EmbeddedResource Include="TextboxWindow.resx">
+      <DependentUpon>TextboxWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Summary.resx">
       <DependentUpon>Summary.vb</DependentUpon>
@@ -211,6 +215,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -222,16 +229,15 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="SimpleElevator_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cornerstone.ico" />
     <Content Include="ElevatorFile.ico" />
-    <None Include="Resources\OpenedFolder.png" />
-    <None Include="Resources\File.png" />
-    <None Include="Resources\door-opened.png" />
-    <None Include="Resources\WelcomeBack.png" />
-    <None Include="Resources\Splash.png" />
+    <None Include="Resources\Images\OpenedFolder.png" />
+    <None Include="Resources\Images\File.png" />
+    <None Include="Resources\Images\door-opened.png" />
+    <None Include="Resources\Images\WelcomeBack.png" />
+    <None Include="Resources\Images\Splash.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

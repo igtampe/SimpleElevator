@@ -1,39 +1,50 @@
-﻿Public Class AutoAdd
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+﻿''' <summary>Handles creation of arraylist of floors to automatically add to a CBElevator</summary>
+Public Class AutoAdd
+
+    '----------------------------------------------------[Variables]----------------------------------------------------
+
+    ''' <summary>My Head Summary Window</summary>
+    Public MyHead As Summary
+
+    '----------------------------------------------------[Initialization]----------------------------------------------------
+
+    Public Sub New(ByRef MyHead As Summary, ByRef mdiparent As Form)
+        InitializeComponent()
+
+        Me.MyHead = MyHead
+        Me.MdiParent = mdiparent
+
+        For Each MCColor As MCColor In MCColor.Dictionary
+            ColorComboBox.Items.Add(MCColor.Name)
+        Next
+
+    End Sub
+
+    '----------------------------------------------------[Buttons]----------------------------------------------------
+
+    Private Sub Nevermind() Handles CancelBTN.Click
         Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim MinY As Integer
-        Dim MaxY As Integer
-        Dim StartFloor As Integer
-        Dim color As String
-        Dim YStep As Integer
+    Private Sub OKAdd() Handles OKBTN.Click
 
-        Dim FloorCount As Integer
+        'Variables
+        Dim MinY As Integer = StartYBox.Value
+        Dim MaxY As Integer = EndYBox.Value
+        Dim StartFloor As Integer = StartFloorBox.Value
+        Dim color As String = MCColor.ColorNameToColorString(ColorComboBox.Text)
+        Dim YStep As Integer = SecondYTXB.Value - StartYBox.Value
 
-        Dim CurrentFloor As Integer
-        Dim CurrentY As Integer
+        Dim FloorCount As Integer = 0
 
-        MinY = StartYBox.Value
-        MaxY = EndYBox.Value
-        StartFloor = StartFloorBox.Value
-        color = ColorComboBox.Text
-        YStep = SecondYTXB.Value - StartYBox.Value
-
-
-
-
+        Dim CurrentFloor As Integer = StartFloor
+        Dim CurrentY As Integer = MinY
 
         If YStep = 0 Then
             MsgBox("haha real funny you want me to step up by 0 real nice do you really want me to spend an ETERNITY CALCULATING THIS STUFF? You're lucky I'm programed to check this stuff before doing anything jesu cristi", MsgBoxStyle.Critical, "really?")
             Exit Sub
         End If
 
-
-        CurrentFloor = StartFloor
-        CurrentY = MinY
-        FloorCount = 0
         Do
             If CurrentY = MaxY Then Exit Do
             If CurrentY > MaxY Then
@@ -41,49 +52,32 @@
                 Exit Sub
             End If
 
-            CurrentY = CurrentY + YStep
-            CurrentFloor = CurrentFloor + 1
-            FloorCount = FloorCount + 1
-
+            CurrentY += YStep
+            CurrentFloor += 1
+            FloorCount += 1
         Loop
 
-        Select Case MsgBox("Add floors " & StartFloor & " to " & CurrentFloor & " (" & FloorCount & " Floors) to the current elevator?", 32 + 4, "Do?")
-            Case MsgBoxResult.Yes
-                CurrentFloor = StartFloor
-                CurrentY = MinY
-                FloorCount = 0
-                Do
+        If MsgBox("Add floors " & StartFloor & " to " & CurrentFloor & " (" & FloorCount & " Floors) to the current elevator?", 32 + 4, "Do?") = MsgBoxResult.Yes Then
 
+            CurrentFloor = StartFloor
+            CurrentY = MinY
+            FloorCount = 0
+            Do
 
-                    MainWindow.AddFloorToElevator("[" & CurrentFloor & "] ", "", color, "~", CurrentY, "~")
+                MyHead.myElevator.AddFloor(New Floor("[" & CurrentFloor & "] ", "", color, "~", CurrentY, "~"))
 
+                If CurrentY = MaxY Then Exit Do
+                CurrentY += YStep
+                CurrentFloor += 1
+                FloorCount += 1
 
-                    If CurrentY = MaxY Then Exit Do
-                    If CurrentY > MaxY Then
-                        MsgBox("This isn't adding up: " & vbNewLine & vbNewLine & "CurrentY: " & CurrentY & vbNewLine & "MaxY: " & MaxY & vbNewLine & "Current Floor: " & CurrentFloor & vbNewLine & vbNewLine & "Check your step or your values and try again", MsgBoxStyle.Critical, "oh no")
-                        Exit Sub
-                    End If
+            Loop
 
+            MyHead.PopulateListview()
+            MyHead.FlagAsModified()
 
-                    CurrentY = CurrentY + YStep
-                    CurrentFloor = CurrentFloor + 1
-                    FloorCount = FloorCount + 1
-
-                Loop
-
-                MsgBox("Successfully added " & FloorCount & " Floors to the current elevator.", MsgBoxStyle.Information, "o k")
-                Close()
-            Case MsgBoxResult.No
-                Exit Sub
-            Case Else
-                Exit Sub
-        End Select
-
-
-
-
-
-
+            Close()
+        End If
 
     End Sub
 End Class
